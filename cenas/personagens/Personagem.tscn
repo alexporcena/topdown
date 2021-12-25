@@ -70,3 +70,6 @@ shape = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 anims/andando = SubResource( 3 )
 anims/parado = SubResource( 4 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 6.05515, 0.511843 )

@@ -1,6 +1,8 @@
 extends KinematicBody2D
 
 const VELOCIDADE = 50
+const VELOCIDADE_PROJETIL = 200
+onready var Projetil = preload("res://cenas/armas/Projetil.tscn")
 
 func _physics_process(delta):
 	
@@ -25,3 +27,13 @@ func _physics_process(delta):
 	direcao = move_and_slide(direcao * VELOCIDADE)
 	
 	look_at(get_global_mouse_position())
+	
+	if Input.is_action_just_pressed("atirar"):
+		atirar()
+
+func atirar():
+	var projetil = Projetil.instance()
+	projetil.position = $Position2D.get_global_position()
+	projetil.rotation_degrees = rotation_degrees
+	projetil.apply_impulse(Vector2.ZERO, Vector2(VELOCIDADE_PROJETIL, 0).rotated(rotation) )
+	get_parent().add_child(projetil)
