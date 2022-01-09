@@ -1,8 +1,29 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://cenas/personagens/Personagem.tscn" type="PackedScene" id=1]
+[ext_resource path="res://cenas/personagens/Inimigo.tscn" type="PackedScene" id=2]
 
 [node name="PrimeiraFase" type="Node2D"]
 
 [node name="Personagem" parent="." instance=ExtResource( 1 )]
-position = Vector2( 53, 42 )
+position = Vector2( 5, 7 )
+
+[node name="Inimigos" type="Node" parent="."]
+
+[node name="Inimigo" parent="Inimigos" instance=ExtResource( 2 )]
+position = Vector2( 186, 72 )
+
+[node name="Inimigo2" parent="Inimigos" instance=ExtResource( 2 )]
+position = Vector2( 5, 62 )
+
+[node name="Inimigo3" parent="Inimigos" instance=ExtResource( 2 )]
+position = Vector2( 187, 48 )
+
+[node name="Inimigo4" parent="Inimigos" instance=ExtResource( 2 )]
+position = Vector2( 104, 99 )
+
+[node name="Inimigo5" parent="Inimigos" instance=ExtResource( 2 )]
+position = Vector2( 4, 100 )
+
+[node name="Inimigo6" parent="Inimigos" instance=ExtResource( 2 )]
+position = Vector2( 174, 8 )
