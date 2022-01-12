@@ -73,3 +73,7 @@ anims/parado = SubResource( 4 )
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 6.05515, 0.511843 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.8, 0.8 )
