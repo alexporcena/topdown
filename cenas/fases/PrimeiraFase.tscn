@@ -39,6 +39,8 @@ position = Vector2( 100, 82 )
 scale = Vector2( 9.71875, 7.78125 )
 texture = ExtResource( 3 )
 
+[node name="Sangue" type="Node2D" parent="."]
+
 [node name="Paredes" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
 cell_size = Vector2( 6, 6 )

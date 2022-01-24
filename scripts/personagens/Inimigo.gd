@@ -24,5 +24,9 @@ func _physics_process(delta):
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("projetil"):
+		var sangue = Sprite.new()
+		sangue.texture = load("res://assets/imagens/blood.png")
+		sangue.position = get_global_position()
+		get_parent().get_parent().get_node("Sangue").add_child(sangue)
 		queue_free()
 		body.queue_free()
