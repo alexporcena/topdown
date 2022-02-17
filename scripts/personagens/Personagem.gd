@@ -6,6 +6,12 @@ const VELOCIDADE = 50
 const VELOCIDADE_PROJETIL = 200
 onready var Projetil = preload("res://cenas/armas/Projetil.tscn")
 
+var vidas = 3
+var projeteis = 15
+
+func _ready():
+	$HUD.altera_projetil(projeteis)
+	
 func _physics_process(delta):
 	
 	var direcao = Vector2.ZERO
@@ -34,8 +40,23 @@ func _physics_process(delta):
 		atirar()
 
 func atirar():
-	var projetil = Projetil.instance()
-	projetil.position = $Position2D.get_global_position()
-	projetil.rotation_degrees = rotation_degrees
-	projetil.apply_impulse(Vector2.ZERO, Vector2(VELOCIDADE_PROJETIL, 0).rotated(rotation) )
-	get_parent().add_child(projetil)
+	if projeteis > 0:
+		var projetil = Projetil.instance()
+		projetil.position = $Position2D.get_global_position()
+		projetil.rotation_degrees = rotation_degrees
+		projetil.apply_impulse(Vector2.ZERO, Vector2(VELOCIDADE_PROJETIL, 0).rotated(rotation) )
+		get_parent().add_child(projetil)
+		usa_projetil()
+	
+func perde_vida():
+	vidas -= 1
+	$HUD.altera_vida(vidas)
+
+func usa_projetil():
+	projeteis -= 1
+	$HUD.altera_projetil(projeteis)
+	
+func recarrega_arma():
+	projeteis += 10
+	$HUD.altera_projetil(projeteis)
+	

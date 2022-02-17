@@ -30,3 +30,5 @@ func _on_Area2D_body_entered(body):
 		get_parent().get_parent().get_node("Sangue").add_child(sangue)
 		queue_free()
 		body.queue_free()
+	elif body is Personagem:
+		body.perde_vida()
