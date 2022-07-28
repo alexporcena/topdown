@@ -6,8 +6,8 @@ const VELOCIDADE = 50
 const VELOCIDADE_PROJETIL = 200
 onready var Projetil = preload("res://cenas/armas/Projetil.tscn")
 
-var vidas = 3
-var projeteis = 15
+var vidas = 9
+var projeteis = 50
 
 func _ready():
 	$HUD.altera_projetil(projeteis)
@@ -51,6 +51,13 @@ func atirar():
 func perde_vida():
 	vidas -= 1
 	$HUD.altera_vida(vidas)
+	if vidas == 0:
+		get_tree().change_scene("res://cenas/interface/GameOver.tscn")
+
+func ganha_vida():
+	if vidas < 9:
+		vidas += 1
+		$HUD.altera_vida(vidas)
 
 func usa_projetil():
 	projeteis -= 1
