@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://cenas/personagens/Personagem.tscn" type="PackedScene" id=1]
 [ext_resource path="res://cenas/personagens/Inimigo.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://cenas/armas/PackMunicao.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scripts/cenas/PrimeiraFase.gd" type="Script" id=6]
 [ext_resource path="res://cenas/personagens/Vida.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/audio/00 - Blake Speers - Journey of the Heroes - Urgenter.ogg" type="AudioStream" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 6, 6, 0, 6, 0, 0, 6, 0 )
@@ -150,13 +151,9 @@ position = Vector2( 87, -12 )
 position = Vector2( -94, 216 )
 
 [node name="Vida" parent="." instance=ExtResource( 7 )]
-position = Vector2( 182, 157 )
+position = Vector2( 324, -39 )
 
-[node name="Vida2" parent="." instance=ExtResource( 7 )]
-position = Vector2( -61, -28 )
-
-[node name="Vida3" parent="." instance=ExtResource( 7 )]
-position = Vector2( 62, 216 )
-
-[node name="Vida4" parent="." instance=ExtResource( 7 )]
-position = Vector2( 195, 196 )
+[node name="AudioMusicaFundo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -15.0
+autoplay = true

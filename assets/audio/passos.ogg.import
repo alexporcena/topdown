@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/passos.ogg-726b723ca912a8f91138242d0343dddc.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/passos.ogg"
+dest_files=[ "res://.import/passos.ogg-726b723ca912a8f91138242d0343dddc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

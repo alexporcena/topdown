@@ -6,8 +6,8 @@ const VELOCIDADE = 50
 const VELOCIDADE_PROJETIL = 200
 onready var Projetil = preload("res://cenas/armas/Projetil.tscn")
 
-var vidas = 9
-var projeteis = 50
+var vidas = 3
+var projeteis = 15
 
 func _ready():
 	$HUD.altera_projetil(projeteis)
@@ -29,8 +29,11 @@ func _physics_process(delta):
 	
 	if direcao == Vector2.ZERO:
 		$AnimationPlayer.play("parado")
+		$AudioPassos.stop()
 	else:
 		$AnimationPlayer.play("andando")
+		if not $AudioPassos.playing:
+			$AudioPassos.play()
 
 	direcao = move_and_slide(direcao * VELOCIDADE)
 	
@@ -41,6 +44,7 @@ func _physics_process(delta):
 
 func atirar():
 	if projeteis > 0:
+		$AudioAtirar.play()
 		var projetil = Projetil.instance()
 		projetil.position = $Position2D.get_global_position()
 		projetil.rotation_degrees = rotation_degrees
@@ -51,11 +55,10 @@ func atirar():
 func perde_vida():
 	vidas -= 1
 	$HUD.altera_vida(vidas)
-	if vidas == 0:
-		get_tree().change_scene("res://cenas/interface/GameOver.tscn")
-
+	
 func ganha_vida():
-	if vidas < 9:
+	if vidas < 3:
+		$AudioGanhaVida.play()
 		vidas += 1
 		$HUD.altera_vida(vidas)
 
@@ -64,6 +67,7 @@ func usa_projetil():
 	$HUD.altera_projetil(projeteis)
 	
 func recarrega_arma():
+	$AudioRecarregaArma.play()
 	projeteis += 10
 	$HUD.altera_projetil(projeteis)
 	
