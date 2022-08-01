@@ -55,6 +55,8 @@ func atirar():
 func perde_vida():
 	vidas -= 1
 	$HUD.altera_vida(vidas)
+	if vidas == 0:
+		get_tree().change_scene("res://cenas/interface/GameOver.tscn")
 	
 func ganha_vida():
 	if vidas < 3:
