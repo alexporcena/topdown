@@ -2,6 +2,10 @@ extends Node2D
 
 onready var AlterarCena = preload("res://cenas/fases/AlterarCena.tscn")
 var fase_finalizada = false
+var cursor = preload("res://assets/imagens/alvo.png")
+
+func _ready():
+	Input.set_custom_mouse_cursor(cursor)
 
 func _physics_process(delta):
 	if conta_inimigos() == 0 and fase_finalizada == false:

@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 class_name Personagem
 
-const VELOCIDADE = 50
+const VELOCIDADE = 80
 const VELOCIDADE_PROJETIL = 200
 onready var Projetil = preload("res://cenas/armas/Projetil.tscn")
 

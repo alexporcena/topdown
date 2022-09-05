@@ -177,6 +177,12 @@ custom_styles/disabled = SubResource( 8 )
 custom_styles/normal = SubResource( 8 )
 text = "SAIR"
 
+[connection signal="mouse_entered" from="HBoxContainer/ButtonJogar" to="." method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="HBoxContainer/ButtonJogar" to="." method="_on_Button_mouse_exited"]
 [connection signal="pressed" from="HBoxContainer/ButtonJogar" to="." method="_on_ButtonJogar_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/ButtonMenu" to="." method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="HBoxContainer/ButtonMenu" to="." method="_on_Button_mouse_exited"]
 [connection signal="pressed" from="HBoxContainer/ButtonMenu" to="." method="_on_ButtonMenu_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/ButtonSair" to="." method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="HBoxContainer/ButtonSair" to="." method="_on_Button_mouse_exited"]
 [connection signal="pressed" from="HBoxContainer/ButtonSair" to="." method="_on_ButtonSair_pressed"]

@@ -21,7 +21,7 @@ func _physics_process(delta):
 	look_at(personagem.position)
 		
 	movimento = movimento.normalized()
-	movimento *= 35
+	movimento *= 45
 		
 	move_and_slide(movimento)
 	
